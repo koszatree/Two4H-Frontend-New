@@ -1,45 +1,61 @@
-<!-- <p>Login</p>
-<input type="text" required [(ngModel)]="user.email" class="form-control" id="email">
-<input type="password" required [(ngModel)]="user.password" class="form-control" id="password">
-<button type="submit" class="btn btn-primary" (click)="Login()">Login</button> -->
+ <link rel="stylesheet" href="login.component.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <div class="body">
+      <section>
+        <img src="https://i.ibb.co/8XY93Qh/logo.png" class="img-fluid" alt="Logo">
+          <div class="form-box">
+              <div class="form-value">
+                  <form action="">
+                      <h2>Login</h2>
+                      <div class="inputbox">
+                          <input type="text" required [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control" id="email">
+                          <i class="fas fa-envelope icon"></i>
+                          <label for="email">Email</label>
+                      </div>
+                      <div class="inputbox">
+                          <input type="password" required [(ngModel)]="password" [ngModelOptions]="{standalone: true}" class="form-control" id="password">
+                          <i class="fas fa-lock icon"></i>
+                          <label for="password">Password</label>
+                      </div>
+                      <button type="submit" class="btn btn-primary"  (click)="Login()">Login</button>
+                      <div class="register">
+                          <p>Don't have an account? <a href="register">Register</a></p>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </section>
+    </div>
 
 
 
-
-
+  
+  <!-- <head>
   <link rel="stylesheet" href="login.component.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
 
-    <section>
-      <img src="https://i.ibb.co/8XY93Qh/logo.png" class="img-fluid" alt="Logo">
-        <div class="form-box">
-            <div class="form-value">
-                <form>
-                    <h2>Login</h2>
-                    <div class="inputbox">
-                        <input type="text" required [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}" class="form-control" id="email">
-                        <i class="fas fa-envelope icon"></i>
-                        <label for="email">Email</label>
-                    </div>
-                     <div class="inputbox">
-                        <input type="password" required [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" class="form-control" id="password">
-                        <i class="fas fa-lock icon"></i>
-                        <label for="password">Password</label>
-                    </div>
-                    <div class="inputbox">
-                        <input type="date" required [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}" class="form-control" id="email">
-                        <i class="fas fa-envelope icon"></i>
-                        <label for="email">Email</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary"  (click)="Login()">Login</button>
-                    <div class="register">
-                        
-                        <p>Don't have an account? <a href="register">Register</a></p>
-                    </div>
-                </form>
-            </div>
+<div class="container mt-4 border border-2 rounded">
+
+    <div class="card border-0">
+      <h1>User Login</h1>
+    </div>
+  
+    <form>
+      <div class="form-group">
+        <label>Email address</label>
+        <input type="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control" id="email" placeholder="Enter email">
+      </div>
+      <div class="form-group">
+          <label>Password</label>
+          <input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" class="form-control" id="password" placeholder="Enter password">
         </div>
-    </section>
-    <style>
-    </style>  
+  
+      <div class="container mt-2">
+        <button type="submit" class="btn btn-primary" (click)="Login()">Login</button>
+      </div>
+      
+    </form>
+  </div>
 
+ -->
