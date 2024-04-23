@@ -25,12 +25,6 @@ export class RegisterComponent {
 
     this.http.post("http://localhost:8080/api/save", bodyData, {responseType: 'text'}).subscribe((resultData: any) => {
       alert("Registered succesfully!");
-      console.log("firstname: " + this.user.firstname +
-        "\nlastname: " + this.user.lastname +
-        "\nbirthday: " + this.user.birthdate +
-        "\nemail: " + this.user.email +
-        "\npassword: " + this.user.password
-      );
     });
   }
 }
