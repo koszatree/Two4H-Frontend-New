@@ -18,13 +18,15 @@ export class LoginComponent {
         password: this.user.password
       };
 
-      this.http.post("http://localhost:8080/api/login", bodyData).subscribe((resultData: any) => {
+     return this.http.post("http://localhost:8080/user/login", bodyData).subscribe((resultData: any) => {
         if(resultData.status == false) {
           alert("Incorrect email or password!");
+  
         }
         else {
           alert("Logged succesfully!");
           //this.router.navigateByUrl("/home");
+
         }
       });
   }
