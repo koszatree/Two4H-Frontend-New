@@ -152,13 +152,15 @@
   max-width: 50%;
 }
 .content h1 {
-  font-size: 2.5em;
+  font-size: 4.5em;
   color: #ffffff;
   font-family: "Montserrat Medium";
   max-width: 40ch;
   text-align: center;
   transform: scale(0.94);
   animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+  padding-bottom: 2vh;
+  align-self: center;
 }
 
 @keyframes scale {
@@ -194,9 +196,11 @@ animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
 .content p {
   font-size: 1.2em;
   color: rgb(255, 255, 255);
+  padding-bottom: 1vh;
 }
 .content button {
-display: inline-block;
+display: block; 
+margin: 20px auto 10px auto;
 outline: none;
 cursor: pointer;
 font-size: 14px;
@@ -221,6 +225,10 @@ height: 48px;
 color: #ffffff;
 background-color: #c9c9c981;
 }
+.content button a {
+  text-decoration: none;
+  color: #ffffff;
+}
 .image {
   max-width: 40%;
 }
@@ -229,27 +237,16 @@ background-color: #c9c9c981;
   height: auto;
 }
 .slide-fwd-left {
--webkit-animation: slide-fwd-left 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
         animation: slide-fwd-left 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-@-webkit-keyframes slide-fwd-left {
-0% {
-  -webkit-transform: translateZ(0) translateX(0);
-          transform: translateZ(0) translateX(0);
-}
-100% {
-  -webkit-transform: translateZ(100px) translateX(-100px);
-          transform: translateZ(100px) translateX(-100px);
-}
 }
 @keyframes slide-fwd-left {
 0% {
-  -webkit-transform: translateZ(0) translateX(0);
-          transform: translateZ(0) translateX(0);
+  -webkit-transform: translateZ(0) translateX(400px);
+          transform: translateZ(0) translateX(400px);
 }
 100% {
-  -webkit-transform: translateZ(100px) translateX(-100px);
-          transform: translateZ(100px) translateX(-100px);
+  -webkit-transform: translateZ(100px) translateX(100px);
+          transform: translateZ(100px) translateX(100px);
 }
 }
 
@@ -298,6 +295,20 @@ background-color: #c9c9c981;
   .container{
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+}
+.slide-fwd-left {
+  animation: slide-fwd-left 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@keyframes slide-fwd-left {
+0% {
+-webkit-transform: translateZ(0) translateX(300px);
+    transform: translateZ(0) translateX(300px);
+}
+100% {
+-webkit-transform: translateZ(100px) translateX(0px);
+    transform: translateZ(100px) translateX(0px);
 }
 }
 /* desktop styles */
