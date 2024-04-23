@@ -196,7 +196,9 @@ animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
 .content p {
   font-size: 1.2em;
   color: rgb(255, 255, 255);
-  padding-bottom: 1vh;
+}
+.content p:nth-child(3) {
+  padding-bottom: 5vh;
 }
 .content button {
 display: block; 
