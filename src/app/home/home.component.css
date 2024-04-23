@@ -161,6 +161,7 @@
   animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
   padding-bottom: 2vh;
   align-self: center;
+  text-align: justify;
 }
 
 @keyframes scale {
