@@ -7,6 +7,7 @@ import { AboutComponent } from './about/about.component';
 import { MapComponent } from './map/map.component';
 import { OrderComponent } from './order/order.component';
 import { AdminComponent } from './admin/admin.component';
+import { SellerComponent } from './seller/seller.component';
 
 
 const routes: Routes = [{
@@ -23,6 +24,11 @@ const routes: Routes = [{
 {
   path: 'register',
   component: RegisterComponent,
+},
+
+{
+  path: 'seller',
+  component: SellerComponent,
 },
 
 {
