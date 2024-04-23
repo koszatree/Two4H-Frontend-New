@@ -16,9 +16,9 @@ export class RegisterComponent {
 
   register(){
     let bodyData = {
-      "firstname" : this.user.firstname,
-      "lastname" : this.user.lastname,
-      "birthdate" : this.user.birthdate,
+      "firstName" : this.user.firstname,
+      "lastName" : this.user.lastname,
+      "birthDate" : this.user.birthdate,
       "email" : this.user.email,
       "password" : this.user.password
     };
