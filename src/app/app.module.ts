@@ -11,6 +11,7 @@ import { AboutComponent } from './about/about.component';
 import { OrderComponent } from './order/order.component';
 import { HomeComponent } from './home/home.component';
 import { MapComponent } from './map/map.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MapComponent } from './map/map.component';
     AboutComponent,
     OrderComponent,
     HomeComponent,
-    MapComponent
+    MapComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

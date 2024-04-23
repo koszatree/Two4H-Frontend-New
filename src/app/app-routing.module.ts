@@ -6,6 +6,7 @@ import { RegisterComponent } from './register/register.component';
 import { AboutComponent } from './about/about.component';
 import { MapComponent } from './map/map.component';
 import { OrderComponent } from './order/order.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 const routes: Routes = [{
@@ -22,6 +23,11 @@ const routes: Routes = [{
 {
   path: 'register',
   component: RegisterComponent,
+},
+
+{
+  path: 'admin',
+  component: AdminComponent,
 },
 
 {

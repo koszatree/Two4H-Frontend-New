@@ -24,7 +24,12 @@ export class LoginComponent {
           alert("Incorrect email or password!");
         }
         else {
-          this.router.navigateByUrl("/home");
+          if(resultData.message == "Admin"){
+            this.router.navigateByUrl("/admin");
+          }
+          else{
+            this.router.navigateByUrl("/home");
+          }
         }
       });
     }
