@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { User } from '../user/user';
+import { UserService } from '../user/user.service';
 
 @Component({
   selector: 'app-register',
@@ -7,25 +9,28 @@ import { Component } from '@angular/core';
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
-  firstname !:string;
-  lastname !:string;
-  email !:string;
-  password !:string;
-  birthdate !:string;
+  user: User = new User();
 
   constructor(private http: HttpClient) {}
+  userService: UserService = new UserService(this.http);
 
   register(){
     let bodyData = {
-      "firstname" : this.firstname,
-      "lastname" : this.lastname,
-      "birthdate" : this.birthdate,
-      "email" : this.email,
-      "password" : this.password
+      "firstname" : this.user.firstname,
+      "lastname" : this.user.lastname,
+      "birthdate" : this.user.birthdate,
+      "email" : this.user.email,
+      "password" : this.user.password
     };
 
-    this.http.post("", bodyData, {responseType: 'text'}).subscribe((resultData: any) => {
+    this.http.post("http://localhost:8080/api/save", bodyData, {responseType: 'text'}).subscribe((resultData: any) => {
       alert("Registered succesfully!");
+      console.log("firstname: " + this.user.firstname +
+        "\nlastname: " + this.user.lastname +
+        "\nbirthday: " + this.user.birthdate +
+        "\nemail: " + this.user.email +
+        "\npassword: " + this.user.password
+      );
     });
   }
 }

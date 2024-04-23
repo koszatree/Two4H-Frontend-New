@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-// import logo from '../../images/logo.png';
+import { User } from '../user/user';
 
 @Component({
   selector: 'app-login',
@@ -9,19 +9,17 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-
-    email !:string;
-    password !:string;
+  user: User = new User();
   
     constructor(private router: Router, private http: HttpClient) {}
 
     Login() {
       let bodyData = {
-        email: this.email,
-        password: this.password
+        email: this.user.email,
+        password: this.user.password
       };
 
-      this.http.post("", bodyData).subscribe((resultData: any) => {
+      this.http.post("http://localhost:8080/api/login", bodyData).subscribe((resultData: any) => {
         if(resultData.status == false) {
           alert("Incorrect email or password!");
         }
@@ -30,7 +28,4 @@ export class LoginComponent {
         }
       });
     }
-  }
-//   export class Image {
-//     logo: string = '../../images/logo.png';
-// }
+}

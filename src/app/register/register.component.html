@@ -5,27 +5,27 @@
                 <form action="">
                     <h2>Register</h2>
                     <div class="inputbox">
-                        <input type="text"  required [(ngModel)]="firstname" [ngModelOptions]="{standalone: true}" class="form-control" id="first_name">
+                        <input type="text"  required [(ngModel)]="user.firstname" [ngModelOptions]="{standalone: true}" class="form-control" id="first_name">
                         <i class="fa fa-user icon" aria-hidden="true"></i>
                         <label for="first_name">First Name</label>
                     </div>
                     <div class="inputbox">
-                      <input type="text" required [(ngModel)]="lastname" [ngModelOptions]="{standalone: true}" class="form-control" id="last_name">
+                      <input type="text" required [(ngModel)]="user.lastname" [ngModelOptions]="{standalone: true}" class="form-control" id="last_name">
                       <i class="fa fa-user icon" aria-hidden="true"></i>
                       <label for="last_name">Last Name</label>
                   </div>
                   <div class="inputbox">
-                    <input type="text" required [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control" id="email">
+                    <input type="text" required [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}" class="form-control" id="email">
                     <i class="fas fa-envelope icon"></i>
                     <label for="email">Email</label>
                 </div>
                     <div class="inputbox">
-                        <input type="password" required [(ngModel)]="password" [ngModelOptions]="{standalone: true}" class="form-control" id="password">
+                        <input type="password" required [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" class="form-control" id="password">
                         <i class="fas fa-lock icon"></i>
                         <label for="password">Password</label>
                     </div>
                     <div class="inputbox">
-                      <input type="date" required [(ngModel)]="birthdate" [ngModelOptions]="{standalone: true}" class="form-control" id="birth_date">
+                      <input type="date" required [(ngModel)]="user.birthdate" [ngModelOptions]="{standalone: true}" class="form-control" id="birth_date">
                       <label id="birthdate" for="birth_date">Birth Date</label>
                   </div>
                     <button type="submit" class="btn btn-primary" (click)="register()">Join</button>
