@@ -15,6 +15,22 @@ export class RegisterComponent {
   userService: UserService = new UserService(this.http);
 
   register(){
+    // Calculate age based on birthdate
+    const birthDate = new Date(this.user.birthdate);
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+
+
+    if (age < 18) {
+      alert("You must be 18 years or older to register.");
+      return; 
+    }
+
+
     let bodyData = {
       "firstName" : this.user.firstname,
       "lastName" : this.user.lastname,
@@ -24,7 +40,7 @@ export class RegisterComponent {
     };
 
     this.http.post("http://localhost:8080/api/save", bodyData, {responseType: 'text'}).subscribe((resultData: any) => {
-      alert("Registered succesfully!");
+      alert("Registered successfully!");
     });
   }
 }
