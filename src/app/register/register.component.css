@@ -88,6 +88,9 @@ top: -5px;
 .inputbox input[type="date"]:focus ~ label {
     top: 5px;
 }
+input[type="date"]::-webkit-calendar-picker-indicator{
+    display: none;
+}
 .icon{
     color: white;
     position: relative;
