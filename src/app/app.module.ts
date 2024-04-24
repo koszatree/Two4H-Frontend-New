@@ -12,6 +12,7 @@ import { OrderComponent } from './order/order.component';
 import { HomeComponent } from './home/home.component';
 import { MapComponent } from './map/map.component';
 import { AdminComponent } from './admin/admin.component';
+import { SellerComponent } from './seller/seller.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AdminComponent } from './admin/admin.component';
     OrderComponent,
     HomeComponent,
     MapComponent,
-    AdminComponent
+    AdminComponent,
+    SellerComponent
   ],
   imports: [
     BrowserModule,

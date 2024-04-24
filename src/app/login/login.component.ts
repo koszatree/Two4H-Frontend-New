@@ -27,8 +27,11 @@ export class LoginComponent {
           if(resultData.message == "Admin"){
             this.router.navigateByUrl("/admin");
           }
-          else{
+          else if(resultData.message == "Customer"){
             this.router.navigateByUrl("/home");
+          }
+          else{
+            this.router.navigateByUrl("/seller");
           }
         }
       });
