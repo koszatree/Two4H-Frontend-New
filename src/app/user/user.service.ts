@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from './user';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,18 +12,7 @@ export class UserService {
   
   constructor(private http: HttpClient) { }
  
-  userRegister(){
-    let bodyData = {
-      "firstName" : this.user.firstname,
-      "lastName" : this.user.lastname,
-      "birthDate" : this.user.birthdate,
-      "email" : this.user.email,
-      "password" : this.user.password
-    };
-
-    this.http.post("http://localhost:8080/api/save", bodyData, {responseType: 'text'}).subscribe((resultData: any) => {
-      alert("Registered succesfully!");
-    });
+  getUsers() : Observable<User[]> {
+    return this.http.get<User[]>("http://localhost:8080/api/userData");
   }
-
 }

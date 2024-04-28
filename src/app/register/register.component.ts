@@ -16,7 +16,7 @@ export class RegisterComponent {
 
   register(){
     // Calculate age based on birthdate
-    const birthDate = new Date(this.user.birthdate);
+    const birthDate = new Date(this.user.birthDate);
     const today = new Date();
     let age = today.getFullYear() - birthDate.getFullYear();
     const monthDiff = today.getMonth() - birthDate.getMonth();
@@ -32,9 +32,9 @@ export class RegisterComponent {
 
 
     let bodyData = {
-      "firstName" : this.user.firstname,
-      "lastName" : this.user.lastname,
-      "birthDate" : this.user.birthdate,
+      "firstName" : this.user.firstName,
+      "lastName" : this.user.lastName,
+      "birthDate" : this.user.birthDate,
       "email" : this.user.email,
       "password" : this.user.password
     };
