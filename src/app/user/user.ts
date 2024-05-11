@@ -6,4 +6,5 @@ export class User {
     password!: string;
     birthDate!: string;
     isCustomer!: boolean;
+    isActive!: boolean;
 }

@@ -10,7 +10,8 @@
                     <th>Password</th>
                     <th>Birth Date</th>
                     <th>Customer</th>
-                     <th colspan="2"></th> <!-- Nie wiem czy to jest dobrze, mają być dwie połączone kolumny (jak niżej) -->
+                    <th>Active</th>
+                    <th>Edit</th>
                 </thead>
                 <tbody>
                     <tr *ngFor="let user of users">
@@ -21,8 +22,8 @@
                         <td>{{user.password}}</td>
                         <td>{{user.birthDate | date: 'dd/MM/yyyy'}}</td>
                         <td>{{user.isCustomer}}</td>
-                        <td>[EDIT]</td> <!-- (ad. jak niżej) EDIT i DELETE mają być w jednej kolumnie, ale osobno tak jakby (tak jak jest tutaj zrobione) -->
-                        <td>[DELETE]</td> <!-- Tutaj będzie odwołanie do metod PUT (do edycji) i DELETE (do usuwania rekordów z bazy) -->
+                        <td>{{user.isActive}}</td>
+                        <td>[EDIT]</td>
                     </tr>
                 </tbody>
             </table>
