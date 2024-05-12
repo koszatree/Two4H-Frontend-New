@@ -15,4 +15,10 @@ export class UserService {
   getUsers() : Observable<User[]> {
     return this.http.get<User[]>("http://localhost:8080/api/userData");
   }
+
+  editUser(user: User){
+    this.http.put("http://localhost:8080/api/", user, {responseType: 'text'}).subscribe((resultData: any) => {
+      alert("Data updated.");
+    });
+  }
 }

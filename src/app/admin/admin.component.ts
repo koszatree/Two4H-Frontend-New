@@ -12,11 +12,17 @@ import { UserService } from '../user/user.service';
 export class AdminComponent implements OnInit {
 
   users!: User[];
+  user = new User();
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
     this.userService.getUsers().subscribe((data: User[]) => {
       this.users = data;
     });
+  }
+
+  // Nie wiem czy to tu będzie bo potrzeba nową podstonę do edycji
+  edit(){
+    this.userService.editUser(this.user);
   }
 }
