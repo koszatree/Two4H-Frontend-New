@@ -8,6 +8,9 @@ import { MapComponent } from './map/map.component';
 import { OrderComponent } from './order/order.component';
 import { AdminComponent } from './admin/admin.component';
 import { SellerComponent } from './seller/seller.component';
+import { UserEditComponent } from './admin/user/user-edit/user-edit.component';
+import { UsersComponent } from './admin/user/users-list/users.component';
+import { adminAuthenticationGuard } from './utils/guards/admin-authentication.guard';
 
 
 const routes: Routes = [{
@@ -34,6 +37,19 @@ const routes: Routes = [{
 {
   path: 'admin',
   component: AdminComponent,
+  canActivate: [adminAuthenticationGuard],
+},
+
+{
+  path: 'admin/users-list',
+  component: UsersComponent,
+  canActivate: [adminAuthenticationGuard],
+},
+
+{
+  path: 'admin/edit-user',
+  component: UserEditComponent,
+  canActivate: [adminAuthenticationGuard],
 },
 
 {

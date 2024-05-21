@@ -18,7 +18,7 @@ export class UserService {
 
   editUser(user: User){
     this.http.put("http://localhost:8080/api/", user, {responseType: 'text'}).subscribe((resultData: any) => {
-      alert("Data updated.");
+      alert(resultData);
     });
   }
 }

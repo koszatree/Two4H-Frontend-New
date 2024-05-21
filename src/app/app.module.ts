@@ -13,13 +13,13 @@ import { HomeComponent } from './home/home.component';
 import { MapComponent } from './map/map.component';
 import { AdminComponent } from './admin/admin.component';
 import { SellerComponent } from './seller/seller.component';
-import { EditComponent } from './admin/edit/edit.component';
-import { UserEditComponent } from './admin/user-edit/user-edit.component';
-import { UsersComponent } from './admin/users/users.component';
-import { ShopsComponent } from './admin/shops/shops.component';
-import { ShopEditComponent } from './admin/shop-edit/shop-edit.component';
-import { ProductsComponent } from './admin/products/products.component';
-import { ProductEditComponent } from './admin/product-edit/product-edit.component';
+import { UserEditComponent } from './admin/user/user-edit/user-edit.component';
+import { UsersComponent } from './admin/user/users-list/users.component';
+import { ShopsComponent } from './admin/shop/shops-list/shops.component';
+import { ShopEditComponent } from './admin/shop/shop-edit/shop-edit.component';
+import { ProductsComponent } from './admin/product/products-list/products.component';
+import { ProductEditComponent } from './admin/product/product-edit/product-edit.component';
+import { TokenService } from './utils/guards/token-service';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,6 @@ import { ProductEditComponent } from './admin/product-edit/product-edit.componen
     MapComponent,
     AdminComponent,
     SellerComponent,
-    EditComponent,
     UserEditComponent,
     UsersComponent,
     ShopsComponent,
@@ -47,7 +46,8 @@ import { ProductEditComponent } from './admin/product-edit/product-edit.componen
     FormsModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    TokenService
   ],
   bootstrap: [AppComponent]
 })
