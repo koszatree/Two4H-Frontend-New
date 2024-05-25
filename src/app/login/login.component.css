@@ -18,8 +18,8 @@ section{
     width: 100%;
     transform: translateY(-100%);
     animation: slideIn 1s ease forwards;
-    padding: 0 20px; /* Added padding for responsiveness */
-    box-sizing: border-box; /* Ensure padding is included in width */
+    padding: 0 20px; 
+    box-sizing: border-box; 
 }
 
 @keyframes slideIn {
@@ -34,8 +34,8 @@ img{
    position: relative;
    width:250px;
    top: 1.9vh;
-   height: auto; /* Maintain aspect ratio */
-   max-width: 100%; /* Ensure image doesn't overflow its container */
+   height: auto; 
+   max-width: 100%; 
 }
 .form-box{
     position: relative;

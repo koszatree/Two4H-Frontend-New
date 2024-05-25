@@ -37,19 +37,19 @@ const routes: Routes = [{
 {
   path: 'admin',
   component: AdminComponent,
-  canActivate: [adminAuthenticationGuard],
+  // canActivate: [adminAuthenticationGuard],
 },
 
 {
   path: 'admin/users-list',
   component: UsersComponent,
-  canActivate: [adminAuthenticationGuard],
+  // canActivate: [adminAuthenticationGuard],
 },
 
 {
   path: 'admin/edit-user',
   component: UserEditComponent,
-  canActivate: [adminAuthenticationGuard],
+  // canActivate: [adminAuthenticationGuard],
 },
 
 {
