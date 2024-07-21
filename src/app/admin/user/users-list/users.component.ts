@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../../user/user';
 import { UserService } from '../../../user/user.service';
+import {UserEditComponent} from "../user-edit/user-edit.component";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-users',
@@ -8,13 +10,32 @@ import { UserService } from '../../../user/user.service';
   styleUrl: './users.component.css'
 })
 export class UsersComponent implements OnInit{
-  
+
   users!: User[];
-  constructor(private userService: UserService) {}
+  // userEditComponent!: UserEditComponent;
+  // constructor(private userService: UserService) {}
+  //
+  // ngOnInit(): void {
+  //   this.userService.getUsers().subscribe((data: User[]) => {
+  //     this.users = data;
+  //   });
+  // }
+  //
+  // userData(id : number): void {
+  //   this.userEditComponent.editUser(id);
+  // }
+  constructor(
+    private router: Router,
+    private userService: UserService
+  ) {}
 
   ngOnInit(): void {
-    this.userService.getUsers().subscribe((data: User[]) => {
+    this.userService.getUsers().subscribe(data => {
       this.users = data;
     });
+  }
+
+  userData(id: number): void {
+    this.router.navigate(['admin/edit-user', id]);
   }
 }

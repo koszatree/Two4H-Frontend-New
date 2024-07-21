@@ -47,7 +47,7 @@ const routes: Routes = [{
 },
 
 {
-  path: 'admin/edit-user',
+  path: 'admin/edit-user/:id',
   component: UserEditComponent,
   // canActivate: [adminAuthenticationGuard],
 },

@@ -9,16 +9,18 @@ import { Observable } from 'rxjs';
 export class UserService {
 
   user: User = new User();
-  
+
   constructor(private http: HttpClient) { }
- 
+
   getUsers() : Observable<User[]> {
     return this.http.get<User[]>("http://localhost:8080/api/userData");
   }
 
-  editUser(user: User){
-    this.http.put("http://localhost:8080/api/", user, {responseType: 'text'}).subscribe((resultData: any) => {
-      alert(resultData);
-    });
+  getUserById(id: number): Observable<User> {
+    return this.http.get<User>(`http://localhost:8080/api/userByIdData?id=${id}`);
+  }
+
+  editUser(id: number, user: User): Observable<any>{
+    return this.http.put(`http://localhost:8080/api/edit?id=${id}`, user, {responseType: 'text'})
   }
 }

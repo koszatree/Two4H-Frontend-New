@@ -20,7 +20,6 @@ import { ShopEditComponent } from './admin/shop/shop-edit/shop-edit.component';
 import { ProductsComponent } from './admin/product/products-list/products.component';
 import { ProductEditComponent } from './admin/product/product-edit/product-edit.component';
 import { TokenService } from './utils/guards/token-service';
-import { ShopComponent } from './shop/shop.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +38,6 @@ import { ShopComponent } from './shop/shop.component';
     ShopEditComponent,
     ProductsComponent,
     ProductEditComponent,
-    ShopComponent
   ],
   imports: [
     BrowserModule,
