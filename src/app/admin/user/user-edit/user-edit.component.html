@@ -1,95 +1,47 @@
-<!--<section>-->
-<!--      <div class="form-box">-->
-<!--          <div class="form-value" *ngIf="user">-->
-<!--              <form (ngSubmit)="edit()">-->
-<!--                  <h2>Edit</h2>-->
-<!--                  <div class="inputbox">-->
-<!--                    <input id="id" [(ngModel)]="user.id" name="id">-->
-<!--                    <label for="id">ID:</label>-->
-<!--                  </div>-->
-<!--                  <div class="inputbox">-->
-<!--                    <input type="text"  required [(ngModel)]="user.firstName" [ngModelOptions]="{standalone: true}" value={{user.firstName}} class="form-control" id="first_name">-->
-<!--                    <i class="fa fa-user icon" aria-hidden="true"></i>-->
-<!--                    <label for="first_name">First Name</label>-->
-<!--                  </div>-->
-<!--                  <div class="inputbox">-->
-<!--                    <input type="text" required [(ngModel)]="user.lastName" [ngModelOptions]="{standalone: true}" class="form-control" id="last_name">-->
-<!--                    <i class="fa fa-user icon" aria-hidden="true"></i>-->
-<!--                    <label for="last_name">Last Name</label>-->
-<!--                  </div>-->
-<!--                  <div class="inputbox">-->
-<!--                    <input type="text" required [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}" class="form-control" id="email">-->
-<!--                    <i class="fas fa-envelope icon"></i>-->
-<!--                    <label for="email">Email</label>-->
-<!--                  </div>-->
-<!--                  <div class="inputbox">-->
-<!--                    <input type="password" required [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" class="form-control" id="password">-->
-<!--                    <i class="fas fa-lock icon"></i>-->
-<!--                    <label for="password">Password</label>-->
-<!--                  </div>-->
-<!--                  <div class="inputbox">-->
-<!--                    <input type="date" required [(ngModel)]="user.birthDate" [ngModelOptions]="{standalone: true}" class="form-control" id="birth_date">-->
-<!--                    <i class="fas fa-calendar icon"></i>-->
-<!--                    <label id="birthdate" for="birth_date">Birth Date</label>-->
-<!--                  </div>-->
-<!--                  <div>-->
-<!--                    <label for="isCustomer">Is Customer</label>-->
-<!--                    <input type="checkbox" id="isCustomer" [(ngModel)]="user.isCustomer" name="isCustomer">-->
-<!--                  </div>-->
-<!--                  <div>-->
-<!--                    <label for="isActive">Is Active</label>-->
-<!--                    <input type="checkbox" id="isActive" [(ngModel)]="user.isActive" name="isActive">-->
-<!--                  </div>-->
-<!--                  <button type="submit" class="btn btn-primary">Save</button>-->
-<!--              </form>-->
-<!--          </div>-->
-<!--      </div>-->
-<!--   </section>-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-<section>
-  <div class="form-box">
-    <div class="form-value" *ngIf="user">
-      <form (ngSubmit)="edit()">
-        <h2>Edit</h2>
-        <div class="inputbox">
-          <input id="id" [(ngModel)]="user.id" name="id" value="{{user.id}}" readonly>
-          <label for="id">ID:</label>
-        </div>
-        <div class="inputbox">
-          <input type="text" required [(ngModel)]="user.firstName" [ngModelOptions]="{standalone: true}" value="{{user.firstName}}" class="form-control" id="first_name">
-          <i class="fa fa-user icon" aria-hidden="true"></i>
-          <label for="first_name">First Name</label>
-        </div>
-        <div class="inputbox">
-          <input type="text" required [(ngModel)]="user.lastName" [ngModelOptions]="{standalone: true}" value="{{user.lastName}}" class="form-control" id="last_name">
-          <i class="fa fa-user icon" aria-hidden="true"></i>
-          <label for="last_name">Last Name</label>
-        </div>
-        <div class="inputbox">
-          <input type="text" required [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}" value="{{user.email}}" class="form-control" id="email">
-          <i class="fas fa-envelope icon"></i>
-          <label for="email">Email</label>
-        </div>
-        <div class="inputbox">
-          <input type="password" required [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" value="{{user.password}}" class="form-control" id="password">
-          <i class="fas fa-lock icon"></i>
-          <label for="password">Password</label>
-        </div>
-        <div class="inputbox">
-          <input type="date" required [(ngModel)]="user.birthDate" [ngModelOptions]="{standalone: true}" value="{{user.birthDate | date:'yyyy-MM-dd'}}" class="form-control" id="birth_date">
-          <i class="fas fa-calendar icon"></i>
-          <label id="birthdate" for="birth_date">Birth Date</label>
-        </div>
-        <div>
-          <label for="isCustomer">Is Customer</label>
-          <input type="checkbox" id="isCustomer" [(ngModel)]="user.isCustomer" name="isCustomer" [checked]="user.isCustomer">
-        </div>
-        <div>
-          <label for="isActive">Is Active</label>
-          <input type="checkbox" id="isActive" [(ngModel)]="user.isActive" name="isActive" [checked]="user.isActive">
-        </div>
-        <button type="submit" class="btn btn-primary">Save</button>
-      </form>
+<div class="body">
+  <section>
+    <div class="form-box">
+      <div class="form-value" *ngIf="user">
+        <form (ngSubmit)="edit()">
+          <h2>Edit</h2>
+          <div class="inputbox">
+            <input id="id" [(ngModel)]="user.id" name="id" value="{{user.id}}" readonly>
+            <label for="id">ID:</label>
+          </div>
+          <div class="inputbox">
+            <input type="text" required [(ngModel)]="user.firstName" [ngModelOptions]="{standalone: true}" value="{{user.firstName}}" class="form-control" id="first_name">
+            <label for="first_name">First Name</label>
+          </div>
+          <div class="inputbox">
+            <input type="text" required [(ngModel)]="user.lastName" [ngModelOptions]="{standalone: true}" value="{{user.lastName}}" class="form-control" id="last_name">
+            <label for="last_name">Last Name</label>
+          </div>
+          <div class="inputbox">
+            <input type="text" required [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}" value="{{user.email}}" class="form-control" id="email">
+            <label for="email">Email</label>
+          </div>
+          <div class="inputbox">
+            <input type="password" required [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" value="{{user.password}}" class="form-control" id="password">
+            <label for="password">Password</label>
+          </div>
+          <div class="inputbox">
+            <input type="date" required [(ngModel)]="user.birthDate" [ngModelOptions]="{standalone: true}" value="{{user.birthDate | date:'yyyy-MM-dd'}}" class="form-control" id="birth_date">
+            <label id="birthdate" for="birth_date">Birth Date</label>
+          </div>
+          <div class="checkbox">
+            <label for="isCustomer">Is Customer</label>
+            <input type="checkbox" id="isCustomer" [(ngModel)]="user.isCustomer" name="isCustomer" [checked]="user.isCustomer">
+          </div>
+          <div class="checkbox">
+            <label for="isActive">Is Active</label>
+            <input type="checkbox" id="isActive" [(ngModel)]="user.isActive" name="isActive" [checked]="user.isActive">
+          </div>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+        <button class="btn btn-primary" (click)="goBack()">Back</button>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>

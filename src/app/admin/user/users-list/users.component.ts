@@ -37,4 +37,8 @@ export class UsersComponent implements OnInit{
   userData(id: number): void {
     this.router.navigate(['admin/edit-user', id]);
   }
+
+  goToHomePage(): void {
+    this.router.navigate(['/admin']);
+  }
 }

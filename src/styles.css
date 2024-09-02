@@ -6,4 +6,33 @@ body {
     background-image: url(https://images.unsplash.com/photo-1508898578281-774ac4893c0c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
     background-blend-mode: exclusion;
   }
-    
+
+table {
+  font-size: 20px;
+  color: #FFFFFF;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0);
+  height: 100%;
+  width: 100%;
+}
+
+td {
+  border-bottom: 2px rgb(245, 245, 245) dashed;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+th {
+  border-bottom: 2px rgb(245, 245, 245) dashed;
+  padding-bottom: 5px;
+}
+
+tbody {
+  color: #cfcfcf;
+}
+
+.card {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0;
+}
+

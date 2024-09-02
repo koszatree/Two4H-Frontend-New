@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import { User } from '../../../user/user';
 import { UserService } from '../../../user/user.service';
 import {ActivatedRoute, Router} from "@angular/router";
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-user-edit',
@@ -11,7 +12,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class UserEditComponent implements OnInit {
   user: User = new User();
 
-  constructor(private userService: UserService, private route: ActivatedRoute, private router: Router) {}
+  constructor(private userService: UserService, private route: ActivatedRoute, private router: Router, private location: Location) {}
 
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];
@@ -32,8 +33,6 @@ export class UserEditComponent implements OnInit {
       console.error('Error fetching user', error);
     }
   );
-    console.log(id);
-    console.log(this.user);
   }
 
   edit(){
@@ -64,5 +63,9 @@ export class UserEditComponent implements OnInit {
     const month = ('0' + (date.getMonth() + 1)).slice(-2);
     const day = ('0' + date.getDate()).slice(-2);
     return `${year}-${month}-${day}`;
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }

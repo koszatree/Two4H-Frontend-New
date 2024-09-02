@@ -10,7 +10,10 @@ import { AdminComponent } from './admin/admin.component';
 import { SellerComponent } from './seller/seller.component';
 import { UserEditComponent } from './admin/user/user-edit/user-edit.component';
 import { UsersComponent } from './admin/user/users-list/users.component';
+import { ProductsComponent} from "./admin/product/products-list/products.component";
 import { adminAuthenticationGuard } from './utils/guards/admin-authentication.guard';
+import {ProductEditComponent} from "./admin/product/product-edit/product-edit.component";
+import {ShopsComponent} from "./admin/shop/shops-list/shops.component";
 
 
 const routes: Routes = [{
@@ -65,7 +68,22 @@ const routes: Routes = [{
 {
   path: 'order',
   component: OrderComponent,
-}
+},
+
+  {
+    path: 'admin/product-list',
+    component: ProductsComponent,
+  },
+
+  {
+    path: 'admin/edit-product/:id',
+    component: ProductEditComponent,
+  },
+
+  {
+    path: 'admin/shop-list',
+    component: ShopsComponent,
+  }
 
 ];
 

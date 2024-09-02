@@ -20,6 +20,8 @@ import { ShopEditComponent } from './admin/shop/shop-edit/shop-edit.component';
 import { ProductsComponent } from './admin/product/products-list/products.component';
 import { ProductEditComponent } from './admin/product/product-edit/product-edit.component';
 import { TokenService } from './utils/guards/token-service';
+import {NgOptimizedImage} from "@angular/common";
+import { ProductCreateComponent } from './admin/product/product-create/product-create.component';
 
 @NgModule({
   declarations: [
@@ -38,13 +40,15 @@ import { TokenService } from './utils/guards/token-service';
     ShopEditComponent,
     ProductsComponent,
     ProductEditComponent,
+    ProductCreateComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        NgOptimizedImage
+    ],
   providers: [
     provideClientHydration(),
     TokenService

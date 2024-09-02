@@ -1,1 +1,35 @@
-<p>products works!</p>
+<script src="../../../product/product.ts"></script>
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <table class="table-striped">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Product Name</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Stock</th>
+          <th>Image</th>
+          <th>Active</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let product of products">
+          <td class="fw-bold">{{product.id}}</td>
+          <td>{{product.productName}}</td>
+          <td>{{product.productDescription}}</td>
+          <td>{{product.price}}</td>
+          <td>{{product.stock}}</td>
+          <td><img [src]="fetchImage(product.id)" width="10%" height="10%" alt="image not found"></td>
+          <td>{{product.isActive}}</td>
+          <td><button (click)="productData(product.id)" class="bg-transparent border-0"><a style="color: black" class="fa fa-pen"></a></button></td>
+        </tr>
+        </tbody>
+      </table>
+      <button class="btn btn-primary mt-3" (click)="goToHomePage()">Back to Admin</button>
+    </div>
+  </div>
+</div>
+
