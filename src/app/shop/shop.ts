@@ -5,7 +5,7 @@ export class Shop {
   id! : number;
   shopName! : string;
   latitude! : number;
-  longitude! : number;
+  longtude! : number;
   isActive! : boolean;
   owner! : User;
   products!: Product[];

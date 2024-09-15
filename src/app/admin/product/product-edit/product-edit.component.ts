@@ -26,30 +26,37 @@ export class ProductEditComponent implements OnInit{
       this.product.price = data.price;
       this.product.stock = data.stock;
       this.product.isActive = data.isActive;
+
+      console.log(data)
     },
       error => {
         console.log('Error fetching products', error);
       });
   }
 
-  edit(){
+  edit() {
+    // Create bodyData to match ProductDTO structure
     let bodyData = {
-      "id" : this.product.id,
-      "productName" : this.product.productName,
-      "productDescription" : this.product.productDescription,
-      "price" : this.product.price,
-      "stock" : this.product.stock,
-      "isActive" : this.product.isActive,
-      "shop" : this.product.shop,
-      "image" : this.product.image,
+      id: this.product.id,
+      productName: this.product.productName,
+      productDescription: this.product.productDescription,
+      price: this.product.price,
+      stock: this.product.stock,
+      image: this.product.image,
+      isActive: this.product.isActive
     };
+    //
+    console.log(bodyData);
 
-    this.productService.editProduct(this.product.id, bodyData).subscribe( (response: any) => {
-        alert("Updated successfully!");
-        this.router.navigate(['admin/product-list']);
+    this.productService.editProduct(this.product.id, bodyData).subscribe(
+      (response: string) => {
+        alert(response); // Display the response message
+        if (response === "Product edited successfully") {
+          this.router.navigate(['admin/product-list']);
+        }
       },
       (error: any) => {
-        alert("Failed to update user");
+        alert("Failed to update product"); // Adjusted message to match context
       }
     );
   }

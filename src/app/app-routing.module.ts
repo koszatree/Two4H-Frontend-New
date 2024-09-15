@@ -14,6 +14,9 @@ import { ProductsComponent} from "./admin/product/products-list/products.compone
 import { adminAuthenticationGuard } from './utils/guards/admin-authentication.guard';
 import {ProductEditComponent} from "./admin/product/product-edit/product-edit.component";
 import {ShopsComponent} from "./admin/shop/shops-list/shops.component";
+import {ProductCreateComponent} from "./admin/product/product-create/product-create.component";
+import {ShopEditComponent} from "./admin/shop/shop-edit/shop-edit.component";
+import {ShopCreateComponent} from "./admin/shop/shop-create/shop-create.component";
 
 
 const routes: Routes = [{
@@ -76,6 +79,11 @@ const routes: Routes = [{
   },
 
   {
+    path: 'admin/product-create',
+    component: ProductCreateComponent,
+  },
+
+  {
     path: 'admin/edit-product/:id',
     component: ProductEditComponent,
   },
@@ -83,7 +91,17 @@ const routes: Routes = [{
   {
     path: 'admin/shop-list',
     component: ShopsComponent,
-  }
+  },
+
+  {
+    path: 'admin/edit-shop/:id',
+    component: ShopEditComponent,
+  },
+
+  {
+    path: 'admin/shop-create',
+    component: ShopCreateComponent,
+  },
 
 ];
 

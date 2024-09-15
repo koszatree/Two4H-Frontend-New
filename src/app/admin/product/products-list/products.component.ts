@@ -36,4 +36,8 @@ export class ProductsComponent implements OnInit{
     this.router.navigate(['/admin']);
   }
 
+  goToProductCreate(): void {
+    this.router.navigate(['/admin/product-create']);
+  }
+
 }

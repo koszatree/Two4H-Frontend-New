@@ -15,13 +15,14 @@
         <tr *ngFor="let shop of shops">
           <td class="fw-bold">{{shop.id}}</td>
           <td>{{shop.shopName}}</td>
-          <td>{{shop.owner}}</td>
+          <td>{{shop.owner.firstName}} {{shop.owner.lastName}}</td>
           <td>{{shop.isActive}}</td>
-<!--          <td><button (click)="userData(user.id)" class="bg-transparent border-0"><a style="color: black" class="fa fa-pen"></a></button></td>-->
+          <td><button (click)="shopData(shop.id)" class="bg-transparent border-0"><a style="color: black" class="fa fa-pen"></a></button></td>
         </tr>
         </tbody>
       </table>
       <button class="btn btn-primary mt-3" (click)="goToHomePage()">Back to Admin</button>
+      <button class="btn btn-primary mt-3" (click)="goToShopCreate()">Add Product</button>
     </div>
   </div>
 </div>

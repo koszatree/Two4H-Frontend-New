@@ -27,8 +27,8 @@
             <label for="password">Stock:</label>
           </div>
           <div class="checkbox">
-            <label for="isCustomer">Is Active</label>
-            <input type="checkbox" id="isCustomer" [(ngModel)]="product.isActive" name="isCustomer" [checked]="product.isActive">
+            <label for="isActive">Is Active</label>
+            <input type="checkbox" id="isActive" [(ngModel)]="product.isActive" name="isActive" [checked]="product.isActive">
           </div>
           <div class="imagebox">
             <img [src]="fetchImage(product.id)" width="10%" height="10%" alt="image not found">

@@ -20,6 +20,14 @@ export class UserService {
     return this.http.get<User>(`http://localhost:8080/api/userByIdData?id=${id}`);
   }
 
+  getCustomers(): Observable<User[]> {
+    return this.http.get<User[]>("http://localhost:8080/api/customersData");
+  }
+
+  getSellers(): Observable<User[]> {
+    return this.http.get<User[]>("http://localhost:8080/api/sellersData");
+  }
+
   editUser(id: number, user: User): Observable<any>{
     return this.http.put(`http://localhost:8080/api/edit?id=${id}`, user, {responseType: 'text'})
   }

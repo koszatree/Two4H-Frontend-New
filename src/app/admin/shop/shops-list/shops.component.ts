@@ -20,8 +20,15 @@ export class ShopsComponent implements OnInit {
     })
   }
 
+  shopData(id: number): void {
+    this.router.navigate(['admin/edit-shop', id]);
+  }
 
   goToHomePage(): void {
     this.router.navigate(['/admin']);
+  }
+
+  goToShopCreate(): void {
+    this.router.navigate(['admin/shop-create']);
   }
 }

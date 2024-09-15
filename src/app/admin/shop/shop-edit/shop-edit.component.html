@@ -1,1 +1,31 @@
-<p>shop-edit works!</p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<div class="body">
+  <section>
+    <div class="form-box">
+      <div class="form-value" *ngIf="shop">
+        <form (ngSubmit)="edit()">
+          <h2>Edit</h2>
+          <div class="inputbox">
+            <input id="id" [(ngModel)]="shop.id" name="id" value="{{shop.id}}" readonly>
+            <label for="id">ID:</label>
+          </div>
+          <div class="inputbox">
+            <input type="text" required [(ngModel)]="shop.shopName" [ngModelOptions]="{standalone: true}" value="{{shop.shopName}}" class="form-control" id="shop_name">
+            <label for="shop_name">Shop Name:</label>
+          </div>
+          <div class="inputbox">
+            <input type="text" required [(ngModel)]="shop.owner.id" [ngModelOptions]="{standalone: true}" value="{{shop.owner.id}}" class="form-control" id="owner">
+            <label for="owner">Shop Owner's ID:a</label>
+          </div>
+          <div class="checkbox">
+            <label for="isActive">Is Active</label>
+            <input type="checkbox" id="isActive" [(ngModel)]="shop.isActive" name="isCustomer" [checked]="shop.isActive">
+          </div>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+        <button class="btn btn-primary" (click)="goBack()">Back</button>
+      </div>
+    </div>
+  </section>
+</div>

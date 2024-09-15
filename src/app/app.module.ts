@@ -22,6 +22,7 @@ import { ProductEditComponent } from './admin/product/product-edit/product-edit.
 import { TokenService } from './utils/guards/token-service';
 import {NgOptimizedImage} from "@angular/common";
 import { ProductCreateComponent } from './admin/product/product-create/product-create.component';
+import { ShopCreateComponent } from './admin/shop/shop-create/shop-create.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { ProductCreateComponent } from './admin/product/product-create/product-c
     ProductsComponent,
     ProductEditComponent,
     ProductCreateComponent,
+    ShopCreateComponent,
   ],
     imports: [
         BrowserModule,
