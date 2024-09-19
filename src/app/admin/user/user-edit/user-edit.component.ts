@@ -3,6 +3,7 @@ import { User } from '../../../user/user';
 import { UserService } from '../../../user/user.service';
 import {ActivatedRoute, Router} from "@angular/router";
 import {Location} from '@angular/common';
+import {Userdto} from "../../../user/userdto";
 
 @Component({
   selector: 'app-user-edit',
@@ -24,7 +25,6 @@ export class UserEditComponent implements OnInit {
       this.user.lastName = data.lastName;
       this.user.birthDate = this.formatDate(data.birthDate);
       this.user.email = data.email;
-      this.user.password = data.password;
       this.user.isCustomer = data.isCustomer;
       this.user.isActive = data.isActive;
     }
@@ -42,7 +42,6 @@ export class UserEditComponent implements OnInit {
       "lastName" : this.user.lastName,
       "birthDate" : this.user.birthDate,
       "email" : this.user.email,
-      "password" : this.user.password,
       "isCustomer" : this.user.isCustomer,
       "isActive" : this.user.isActive
     };

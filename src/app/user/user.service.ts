@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { User } from './user';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import {Userdto} from "./userdto";
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +29,7 @@ export class UserService {
     return this.http.get<User[]>("http://localhost:8080/api/sellersData");
   }
 
-  editUser(id: number, user: User): Observable<any>{
+  editUser(id: number, user: Userdto): Observable<any>{
     return this.http.put(`http://localhost:8080/api/edit?id=${id}`, user, {responseType: 'text'})
   }
 }
