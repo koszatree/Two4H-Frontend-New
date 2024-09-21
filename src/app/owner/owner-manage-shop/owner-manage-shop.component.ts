@@ -1,35 +1,30 @@
 import {Component, OnInit} from '@angular/core';
-import {Shop} from "../../../shop/shop";
+import {Shop} from "../../shop/shop";
+import {User} from "../../user/user";
 import {HttpClient} from "@angular/common/http";
 import {ActivatedRoute, Router} from "@angular/router";
-import {ShopService} from "../../../shop/shop.service";
+import {ShopService} from "../../shop/shop.service";
+import {UserService} from "../../user/user.service";
 import {Location} from "@angular/common";
-import {Shopdto} from "../../../shop/shopdto";
-import {UserService} from "../../../user/user.service";
-import {User} from "../../../user/user";
+import {Shopdto} from "../../shop/shopdto";
 
 @Component({
-  selector: 'app-shop-edit',
-  templateUrl: './shop-edit.component.html',
-  styleUrl: './shop-edit.component.css'
+  selector: 'app-owner-manage-shop',
+  templateUrl: './owner-manage-shop.component.html',
+  styleUrl: './owner-manage-shop.component.css'
 })
-export class ShopEditComponent implements OnInit {
+export class OwnerManageShopComponent implements OnInit{
   shop = new Shop();
-  owners!: User[];
 
-  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router, private shopService: ShopService, private userService: UserService, private location: Location) { this.shop.owner = new User(); }
+  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router, private shopService: ShopService, private location: Location) { this.shop.owner = new User(); }
 
   ngOnInit() : void {
-    this.userService.getSellers().subscribe(data => this.owners = data);
-
-
     const id = this.route.snapshot.params['id'];
     this.shopService.getShopById(id).subscribe(
       data=>
       {
         this.shop.id = data.id;
         this.shop.shopName = data.shopName;
-        this.shop.owner = data.owner;
         this.shop.latitude = data.latitude;
         this.shop.longtude = data.longtude;
         this.shop.products = data.products;

@@ -21,6 +21,10 @@ export class ShopService {
     return this.http.get<Shop>(`http://localhost:8080/api/shopByIdData?id=${id}`);
   }
 
+  getShopsByOwner(id: number): Observable<Shop[]> {
+    return this.http.get<Shop[]>(`http://localhost:8080/api/shopsByOwner?id=${id}`);
+  }
+
   editShop(id: number, shop: Shopdto): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 

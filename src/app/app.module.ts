@@ -23,6 +23,9 @@ import { TokenService } from './utils/guards/token-service';
 import {NgOptimizedImage} from "@angular/common";
 import { ProductCreateComponent } from './admin/product/product-create/product-create.component';
 import { ShopCreateComponent } from './admin/shop/shop-create/shop-create.component';
+import { OwnerHomeComponent } from './owner/owner-home/owner-home.component';
+import { OwnerManageShopComponent } from './owner/owner-manage-shop/owner-manage-shop.component';
+import { ShopListComponent } from './owner/shop-list/shop-list.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +46,9 @@ import { ShopCreateComponent } from './admin/shop/shop-create/shop-create.compon
     ProductEditComponent,
     ProductCreateComponent,
     ShopCreateComponent,
+    OwnerHomeComponent,
+    OwnerManageShopComponent,
+    ShopListComponent,
   ],
     imports: [
         BrowserModule,

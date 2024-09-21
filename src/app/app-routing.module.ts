@@ -17,6 +17,9 @@ import {ShopsComponent} from "./admin/shop/shops-list/shops.component";
 import {ProductCreateComponent} from "./admin/product/product-create/product-create.component";
 import {ShopEditComponent} from "./admin/shop/shop-edit/shop-edit.component";
 import {ShopCreateComponent} from "./admin/shop/shop-create/shop-create.component";
+import {OwnerHomeComponent} from "./owner/owner-home/owner-home.component";
+import {OwnerManageShopComponent} from "./owner/owner-manage-shop/owner-manage-shop.component";
+import {ShopListComponent} from "./owner/shop-list/shop-list.component";
 
 
 const routes: Routes = [{
@@ -27,8 +30,22 @@ const routes: Routes = [{
 {
   path: 'home',
   component: HomeComponent,
-
 },
+
+  {
+    path: 'owner',
+    component: OwnerHomeComponent,
+  },
+
+  {
+    path: 'owner/shops-list',
+    component: ShopListComponent,
+  },
+
+  {
+    path: 'owner/manage-shop',
+    component: OwnerManageShopComponent,
+  },
 
 {
   path: 'register',

@@ -14,16 +14,6 @@
             <input type="text" required [(ngModel)]="shop.shopName" [ngModelOptions]="{standalone: true}" value="{{shop.shopName}}" class="form-control" id="shop_name">
             <label for="shop_name">Shop Name:</label>
           </div>
-          <div class="dropdown">
-            <label for="owner">Shop Owner's ID:</label>
-            <select id="owner" required [(ngModel)]="shop.owner.id" [ngModelOptions]="{standalone: true}" class="form-control">
-              <option *ngFor="let owner of owners" value="{{owner.id}}">{{owner.id}} {{owner.firstName}} {{owner.lastName}}</option>
-            </select>
-          </div>
-          <div class="checkbox">
-            <label for="isActive">Is Active</label>
-            <input type="checkbox" id="isActive" [(ngModel)]="shop.isActive" name="isCustomer" [checked]="shop.isActive">
-          </div>
           <button type="submit" class="btn btn-primary">Save</button>
         </form>
         <button class="btn btn-primary" (click)="goBack()">Back</button>
@@ -31,3 +21,4 @@
     </div>
   </section>
 </div>
+

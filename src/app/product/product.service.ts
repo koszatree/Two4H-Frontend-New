@@ -19,7 +19,11 @@ export class ProductService {
   }
 
   getProductById(id: number): Observable<any> {
-    return this.http.get(`http://localhost:8080/api/productByIdData?id=${id}`);
+    return this.http.get<Product>(`http://localhost:8080/api/productByIdData?id=${id}`);
+  }
+
+  getActiveProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>("http://localhost:8080/api/activeProducts");
   }
 
   getImage(id: number) : string {
