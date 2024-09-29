@@ -7,7 +7,7 @@
           <th>ID</th>
           <th>Shop Name</th>
           <th>Owner</th>
-          <th>Active</th>
+          <th>Products</th>
           <th></th>
         </tr>
         </thead>
@@ -16,7 +16,7 @@
           <td class="fw-bold">{{shop.id}}</td>
           <td>{{shop.shopName}}</td>
           <td>{{shop.owner.firstName}} {{shop.owner.lastName}}</td>
-          <td>{{shop.isActive}}</td>
+          <td>{{shop.products}}</td>
           <td><button (click)="shopData(shop.id)" class="bg-transparent border-0"><a style="color: black" class="fa fa-pen"></a></button></td>
         </tr>
         </tbody>

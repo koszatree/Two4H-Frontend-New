@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 <div class="body">
-  <section>
+  <section class="section-edit">
     <div class="form-box">
       <div class="form-value" *ngIf="shop">
         <form (ngSubmit)="edit()">
@@ -20,5 +20,54 @@
       </div>
     </div>
   </section>
+
+  <section class="section-add">
+    <div class="form-box">
+      <div class="form-value" *ngIf="shop">
+        <form (ngSubmit)="addProduct()">
+          <h2>Products</h2>
+          <table class="table-striped">
+            <thead>
+            <tr>
+              <th>ID</th>
+              <th>Product Name</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th>Stock</th>
+              <th>Image</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let product of productsInShop">
+              <td class="fw-bold">{{product.id}}</td>
+              <td>{{product.productName}}</td>
+              <td>{{product.productDescription}}</td>
+              <td>{{product.price}}</td>
+              <td>{{product.stock}}</td>
+              <td><img [src]="fetchImage(product.id)" width="10%" height="10%" alt="image not found"></td>
+            </tr>
+            </tbody>
+          </table>
+          <!--          <div class="dropdown">-->
+          <!--            <label for="products1">Products:</label>-->
+          <!--            <select id="products1" required [(ngModel)]="shop.products" [ngModelOptions]="{standalone: true}" class="form-control">-->
+          <!--              <option *ngFor="let product of activeProducts" value="{{product}}">-->
+          <!--                {{product.id}} {{product.productName}} {{product.productDescription}}-->
+          <!--              </option>-->
+          <!--            </select>-->
+          <!--          </div>-->
+          <div class="dropdown">
+            <label for="product">Select product:</label>
+            <select id="product" required [(ngModel)]="product" [ngModelOptions]="{standalone: true}" [value]="product.id" class="form-control">
+              <option *ngFor="let product of activeProducts" value="{{product.id}}">{{product.id}} {{product.productName}} {{product.productDescription}}</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+        <button class="btn btn-primary" (click)="goBack()">Back</button>
+      </div>
+    </div>
+  </section>
+
 </div>
 

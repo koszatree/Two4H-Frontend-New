@@ -20,6 +20,7 @@ import {ShopCreateComponent} from "./admin/shop/shop-create/shop-create.componen
 import {OwnerHomeComponent} from "./owner/owner-home/owner-home.component";
 import {OwnerManageShopComponent} from "./owner/owner-manage-shop/owner-manage-shop.component";
 import {ShopListComponent} from "./owner/shop-list/shop-list.component";
+import {OwnersResolver} from "./shop/OwnersResolver";
 
 
 const routes: Routes = [{
@@ -43,7 +44,7 @@ const routes: Routes = [{
   },
 
   {
-    path: 'owner/manage-shop',
+    path: 'owner/manage-shop/:id',
     component: OwnerManageShopComponent,
   },
 
@@ -108,6 +109,7 @@ const routes: Routes = [{
   {
     path: 'admin/shop-list',
     component: ShopsComponent,
+    resolve: {owners: OwnersResolver}
   },
 
   {

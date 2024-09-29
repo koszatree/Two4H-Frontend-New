@@ -1,9 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Product} from "../../../product/product";
 import {Router} from "@angular/router";
-import {UserService} from "../../../user/user.service";
 import {ProductService} from "../../../product/product.service";
-import {DomSanitizer, SafeUrl} from "@angular/platform-browser";
+import {Productdto} from "../../../product/productdto";
 
 @Component({
   selector: 'app-products',
@@ -11,7 +9,7 @@ import {DomSanitizer, SafeUrl} from "@angular/platform-browser";
   styleUrl: './products.component.css'
 })
 export class ProductsComponent implements OnInit{
-  products!: Product[];
+  products!: Productdto[];
 
   constructor(
     private router: Router,

@@ -17,7 +17,7 @@ export class UserService {
     return this.http.get<User[]>("http://localhost:8080/api/userData");
   }
 
-  getUserById(id: number): Observable<User> {
+  getUserById(id: number): Observable<Userdto> {
     return this.http.get<User>(`http://localhost:8080/api/userByIdData?id=${id}`);
   }
 

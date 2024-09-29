@@ -16,7 +16,7 @@
           </div>
           <div class="dropdown">
             <label for="owner">Shop Owner's ID:</label>
-            <select id="owner" required [(ngModel)]="shop.owner.id" [ngModelOptions]="{standalone: true}" class="form-control">
+            <select id="owner" required [(ngModel)]="shop.ownerId" [ngModelOptions]="{standalone: true}" [value]="shop.ownerId" class="form-control">
               <option *ngFor="let owner of owners" value="{{owner.id}}">{{owner.id}} {{owner.firstName}} {{owner.lastName}}</option>
             </select>
           </div>

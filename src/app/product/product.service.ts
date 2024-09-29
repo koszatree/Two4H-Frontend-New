@@ -14,16 +14,16 @@ export class ProductService {
 
   constructor(private http: HttpClient) { }
 
-  getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>("http://localhost:8080/api/productData");
+  getProducts(): Observable<Productdto[]> {
+    return this.http.get<Productdto[]>("http://localhost:8080/api/productData");
   }
 
   getProductById(id: number): Observable<any> {
-    return this.http.get<Product>(`http://localhost:8080/api/productByIdData?id=${id}`);
+    return this.http.get<Productdto>(`http://localhost:8080/api/productByIdData?id=${id}`);
   }
 
-  getActiveProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>("http://localhost:8080/api/activeProducts");
+  getActiveProducts(): Observable<Productdto[]> {
+    return this.http.get<Productdto[]>("http://localhost:8080/api/activeProducts");
   }
 
   getImage(id: number) : string {

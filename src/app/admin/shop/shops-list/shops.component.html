@@ -1,6 +1,6 @@
 <div class="container">
   <div class="card">
-    <div class="card-body">
+    <div class="card-body" *ngIf="shops$ | async as shops; else loading">
       <table class="table-striped">
         <thead>
         <tr>
@@ -15,7 +15,11 @@
         <tr *ngFor="let shop of shops">
           <td class="fw-bold">{{shop.id}}</td>
           <td>{{shop.shopName}}</td>
-          <td>{{shop.owner.firstName}} {{shop.owner.lastName}}</td>
+          <td>
+            {{ getOwnerOfShop(shop.ownerId)?.firstName }} {{ getOwnerOfShop(shop.ownerId)?.lastName }}
+          </td>
+<!--          <td *ngIf="!getOwnerOfShop(shop.ownerId)">Loading...</td>-->
+          <!--          <td>{{getOwnerOfShop(shop.ownerId).firstName}} {{getOwnerOfShop(shop.ownerId).lastName}}</td>-->
           <td>{{shop.isActive}}</td>
           <td><button (click)="shopData(shop.id)" class="bg-transparent border-0"><a style="color: black" class="fa fa-pen"></a></button></td>
         </tr>
@@ -24,5 +28,10 @@
       <button class="btn btn-primary mt-3" (click)="goToHomePage()">Back to Admin</button>
       <button class="btn btn-primary mt-3" (click)="goToShopCreate()">Add Shop</button>
     </div>
+
+    <ng-template #loading>
+      <p>Loading shops...</p>
+    </ng-template>
+
   </div>
 </div>

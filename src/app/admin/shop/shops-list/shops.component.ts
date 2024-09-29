@@ -1,7 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {Shop} from "../../../shop/shop";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {ShopService} from "../../../shop/shop.service";
+import {Shopdto} from "../../../shop/shopdto";
+import {UserService} from "../../../user/user.service";
+import {Userdto} from "../../../user/userdto";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-shops',
@@ -10,14 +14,28 @@ import {ShopService} from "../../../shop/shop.service";
 })
 export class ShopsComponent implements OnInit {
 
-  shops!: Shop[];
+  shops$!: Observable<Shopdto[]>;
+  owners!: Userdto[];
 
-  constructor(private router: Router, private shopService: ShopService) {}
+  constructor(private router: Router, private shopService: ShopService, private userService: UserService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.shopService.getShops().subscribe(data => {
-      this.shops = data;
-    })
+    this.owners = this.route.snapshot.data['owners'];
+    this.shops$ = this.shopService.getShops();
+  }
+
+  getOwnerOfShop(id: number): Userdto | undefined/*{ firstName: string, lastName: string }*/ {
+    if (this.owners && this.owners.length > 0) {
+      return this.owners.find(owner => owner.id === id);
+    } else {
+      console.warn('Owners list is empty or not initialized');
+      return undefined; // Return undefined if not found or owners not loaded
+    }
+    // if (this.owners && this.owners.length > 0) {
+    //   return this.owners.find(owner => owner.id === id) || { firstName: 'Unknown', lastName: 'Owner' };
+    // } else {
+    //   return { firstName: 'Loading', lastName: '...' }; // Return default fallback while loading
+    // }
   }
 
   shopData(id: number): void {
