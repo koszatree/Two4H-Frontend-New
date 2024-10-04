@@ -12,7 +12,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let shop of shops">
+        <tr *ngFor="let shop of shops$ | async">
           <td class="fw-bold">{{shop.id}}</td>
           <td>{{shop.shopName}}</td>
           <td>

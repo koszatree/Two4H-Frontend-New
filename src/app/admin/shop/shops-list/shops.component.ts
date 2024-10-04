@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {Shop} from "../../../shop/shop";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ShopService} from "../../../shop/shop.service";
@@ -15,12 +15,15 @@ import {Observable} from "rxjs";
 export class ShopsComponent implements OnInit {
 
   shops$!: Observable<Shopdto[]>;
-  owners!: Userdto[];
+  owners: Userdto[] = [];
 
   constructor(private router: Router, private shopService: ShopService, private userService: UserService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.owners = this.route.snapshot.data['owners'];
+    this.userService.getSellers().subscribe(data => {
+      this.owners = data
+      console.log('Owners loaded: ' + this.owners);
+    });
     this.shops$ = this.shopService.getShops();
   }
 
@@ -31,11 +34,6 @@ export class ShopsComponent implements OnInit {
       console.warn('Owners list is empty or not initialized');
       return undefined; // Return undefined if not found or owners not loaded
     }
-    // if (this.owners && this.owners.length > 0) {
-    //   return this.owners.find(owner => owner.id === id) || { firstName: 'Unknown', lastName: 'Owner' };
-    // } else {
-    //   return { firstName: 'Loading', lastName: '...' }; // Return default fallback while loading
-    // }
   }
 
   shopData(id: number): void {

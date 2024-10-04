@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<div class="body">
+  <section>
+    <div class="form-box">
+      <div class="form-value" >
+        <form (ngSubmit)="addShop()">
+          <h2>Create Product</h2>
+          <div class="inputbox">
+            <input type="text" required [(ngModel)]="shop.shopName" [ngModelOptions]="{standalone: true}" class="form-control" id="shop_name">
+            <label for="shop_name">Shop Name:</label>
+          </div>
+          <div class="inputbox">
+            <select id="owner" required [(ngModel)]="shop.owner.id" [ngModelOptions]="{standalone: true}" class="form-control">
+              <option *ngFor="let owner of owners" value="{{owner.id}}">{{owner.id}} {{owner.firstName}} {{owner.lastName}}</option>
+            </select>
+            <label for="owner">Owner:</label>
+          </div>
+          <div class="inputbox">
+            <input type="text" required [(ngModel)]="shop.latitude" [ngModelOptions]="{standalone: true}" class="form-control" id="latitude">
+            <label for="latitude">Latitude:</label>
+          </div>
+          <div class="inputbox">
+            <input type="text" required [(ngModel)]="shop.longtude" [ngModelOptions]="{standalone: true}" class="form-control" id="longitude">
+            <label for="longitude">Longitude:</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+        <button class="btn btn-primary" (click)="goBack()">Back</button>
+      </div>
+    </div>
+  </section>
+</div>

@@ -19,7 +19,7 @@ import {Userdto} from "../../user/userdto";
   styleUrl: './owner-manage-shop.component.css'
 })
 export class OwnerManageShopComponent implements OnInit{
-  shop!: Shopdto;
+  shop!: any;
   owner!: Userdto;
   productsInShop!: Product[];
   activeProducts!: Productdto[];
@@ -32,7 +32,10 @@ export class OwnerManageShopComponent implements OnInit{
   }
 
   ngOnInit() : void {
+    this.shop = {};
+
     const id = this.route.snapshot.params['id'];
+
     this.shopService.getShopById(id).subscribe(
       data=>
       {

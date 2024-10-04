@@ -14,14 +14,14 @@ import {User} from "../../../user/user";
   styleUrl: './shop-edit.component.css'
 })
 export class ShopEditComponent implements OnInit {
-  shop!: Shopdto;
+  shop!:any;
   owners!: User[];
 
   constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router, private shopService: ShopService, private userService: UserService, private location: Location) { /*this.shop.owner = new User();*/ }
 
   ngOnInit() : void {
+    this.shop = {};
     this.userService.getSellers().subscribe(data => this.owners = data);
-
 
     const id = this.route.snapshot.params['id'];
     this.shopService.getShopById(id).subscribe(
