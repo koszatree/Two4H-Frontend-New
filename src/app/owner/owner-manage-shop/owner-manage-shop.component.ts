@@ -23,7 +23,7 @@ export class OwnerManageShopComponent implements OnInit{
   owner!: Userdto;
   productsInShop!: Product[];
   activeProducts!: Productdto[];
-  product = new Product();
+  product!: Productdto;
 
   constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router, private shopService: ShopService, private userService: UserService ,private location: Location, private productService: ProductService) { /*this.shop.ownerId = new User();*/ }
 
@@ -47,6 +47,12 @@ export class OwnerManageShopComponent implements OnInit{
         this.shop.products = data.products;
         this.shop.isActive = data.isActive;
 
+        // Getting shop owner as UserDto
+        this.userService.getUserById(this.shop.ownerId).subscribe(
+          data => {
+            this.owner = data;
+          }
+        )
       },
       error => {
         console.log('Error fetching products', error);
@@ -63,13 +69,6 @@ export class OwnerManageShopComponent implements OnInit{
       data => {
         this.productsInShop = data;
         console.log(this.productsInShop);
-      }
-    )
-
-    // Getting shop owner as UserDto
-    this.userService.getUserById(id).subscribe(
-      data => {
-        this.owner = data;
       }
     )
   }
@@ -101,6 +100,11 @@ export class OwnerManageShopComponent implements OnInit{
   }
 
   addProduct() {
+    if(!this.product){
+      alert("Select a product!!");
+      return;
+    }
+
     let bodyData: Productdto = {
       "id": this.product.id,
       "productName": this.product.productName,
@@ -108,6 +112,7 @@ export class OwnerManageShopComponent implements OnInit{
       "price": this.product.price,
       "stock": this.product.stock,
       "image": this.product.image,
+      "shopId": this.product.shopId,
       "isActive": this.product.isActive,
     };
 

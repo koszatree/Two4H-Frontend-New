@@ -58,8 +58,8 @@
           <!--          </div>-->
           <div class="dropdown">
             <label for="product">Select product:</label>
-            <select id="product" required [(ngModel)]="product" [ngModelOptions]="{standalone: true}" [value]="product.id" class="form-control">
-              <option *ngFor="let product of activeProducts" value="{{product.id}}">{{product.id}} {{product.productName}} {{product.productDescription}}</option>
+            <select id="product" required [(ngModel)]="product" [ngModelOptions]="{standalone: true}" class="form-control">
+              <option *ngFor="let product of activeProducts" [ngValue]="product">{{product.id}} {{product.productName}} {{product.productDescription}}</option>
             </select>
           </div>
           <button type="submit" class="btn btn-primary">Add</button>

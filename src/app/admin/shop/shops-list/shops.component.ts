@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {AfterViewChecked, AfterViewInit, ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {Shop} from "../../../shop/shop";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ShopService} from "../../../shop/shop.service";
@@ -12,12 +12,12 @@ import {Observable} from "rxjs";
   templateUrl: './shops.component.html',
   styleUrl: './shops.component.css'
 })
-export class ShopsComponent implements OnInit {
+export class ShopsComponent implements OnInit{
 
   shops$!: Observable<Shopdto[]>;
   owners: Userdto[] = [];
 
-  constructor(private router: Router, private shopService: ShopService, private userService: UserService, private route: ActivatedRoute) {}
+  constructor(private router: Router, private shopService: ShopService, private userService: UserService, private route: ActivatedRoute, private cdRef: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this.userService.getSellers().subscribe(data => {

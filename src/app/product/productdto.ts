@@ -5,5 +5,6 @@ export interface Productdto {
   price: number;
   stock: number;
   image: string;
+  shopId: number;
   isActive: boolean;
 }

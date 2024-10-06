@@ -4,6 +4,7 @@ import {Product} from "../../../product/product";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Location} from "@angular/common";
 import {error} from "@angular/compiler-cli/src/transformers/util";
+import {Productdto} from "../../../product/productdto";
 
 @Component({
   selector: 'app-product-edit',
@@ -11,7 +12,16 @@ import {error} from "@angular/compiler-cli/src/transformers/util";
   styleUrl: './product-edit.component.css'
 })
 export class ProductEditComponent implements OnInit{
-  product: Product = new Product();
+  product: Productdto = {
+    id: 0,
+    productName: '',
+    productDescription: '',
+    price: 0,
+    stock: 0,
+    image: '',
+    shopId: 0,
+    isActive: false
+  };
 
   constructor(private productService: ProductService, private route: ActivatedRoute,private router: Router, private location: Location) { }
 
@@ -25,6 +35,7 @@ export class ProductEditComponent implements OnInit{
       this.product.productDescription = data.productDescription;
       this.product.price = data.price;
       this.product.stock = data.stock;
+      this.product.shopId = data.shopId;
       this.product.isActive = data.isActive;
 
       console.log(data)
@@ -43,6 +54,7 @@ export class ProductEditComponent implements OnInit{
       price: this.product.price,
       stock: this.product.stock,
       image: this.product.image,
+      shopId: this.product.shopId,
       isActive: this.product.isActive
     };
     //
