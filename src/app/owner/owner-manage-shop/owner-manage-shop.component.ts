@@ -71,6 +71,9 @@ export class OwnerManageShopComponent implements OnInit{
         console.log(this.productsInShop);
       }
     )
+
+    // Check if in productsInShop there are no inactive Products
+    // First idea: two for-each loops to check if every product exists in activeProducts (by checking id's) [Probably terrible optimisation]
   }
 
   edit() {

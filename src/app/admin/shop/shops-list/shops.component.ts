@@ -22,7 +22,6 @@ export class ShopsComponent implements OnInit{
   ngOnInit(): void {
     this.userService.getSellers().subscribe(data => {
       this.owners = data
-      console.log('Owners loaded: ' + this.owners);
     });
     this.shops$ = this.shopService.getShops();
   }

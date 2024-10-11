@@ -15,7 +15,15 @@
           <td class="fw-bold">{{shop.id}}</td>
           <td>{{shop.shopName}}</td>
 <!--          <td>{{getOwnerOfShop(shop.ownerId)?.firstName}} {{getOwnerOfShop(shop.ownerId)?.lastName}}</td>-->
-          <td>{{getProductsFromShop(shop.id)}}</td>
+          <td>
+            <li *ngFor="let product of activeProducts">
+              <ol *ngIf="product.shopId == shop.id">
+                {{product.productName}}
+              </ol>
+            </li>
+
+<!--            {{getProductsFromShop(shop.id)}}-->
+          </td>
           <td><button (click)="shopData(shop.id)" class="bg-transparent border-0"><a style="color: black" class="fa fa-pen"></a></button></td>
         </tr>
         </tbody>
