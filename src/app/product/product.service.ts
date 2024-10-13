@@ -18,6 +18,14 @@ export class ProductService {
     return this.http.get<Productdto[]>("http://localhost:8080/api/productData");
   }
 
+  getNeutralProducts(): Observable<Productdto[]> {
+    return this.http.get<Productdto[]>("http://localhost:8080/api/neutralProducts");
+  }
+
+  getActiveNeutralProducts(): Observable<Productdto[]> {
+    return this.http.get<Productdto[]>("http://localhost:8080/api/neutralActiveProducts");
+  }
+
   getProductById(id: number): Observable<any> {
     return this.http.get<Productdto>(`http://localhost:8080/api/productByIdData?id=${id}`);
   }
