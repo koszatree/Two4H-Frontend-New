@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './customer/home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { AboutComponent } from './about/about.component';
 import { MapComponent } from './map/map.component';
@@ -20,6 +20,9 @@ import {ShopCreateComponent} from "./admin/shop/shop-create/shop-create.componen
 import {OwnerHomeComponent} from "./owner/owner-home/owner-home.component";
 import {OwnerManageShopComponent} from "./owner/owner-manage-shop/owner-manage-shop.component";
 import {ShopListComponent} from "./owner/shop-list/shop-list.component";
+import {OwnerProductEditComponent} from "./owner/owner-product-edit/owner-product-edit.component";
+import {ShopsListComponent} from "./customer/shops-list/shops-list.component";
+import {ProductsListComponent} from "./customer/products-list/products-list.component";
 
 
 const routes: Routes = [{
@@ -45,6 +48,11 @@ const routes: Routes = [{
   {
     path: 'owner/manage-shop/:id',
     component: OwnerManageShopComponent,
+  },
+
+  {
+    path: 'owner/edit-product/:id',
+    component: OwnerProductEditComponent,
   },
 
 {
@@ -87,8 +95,13 @@ const routes: Routes = [{
 
 {
   path: 'order',
-  component: OrderComponent,
+  component: ShopsListComponent,
 },
+
+  {
+    path: 'order/products/:id',
+    component: ProductsListComponent,
+  },
 
   {
     path: 'admin/product-list',

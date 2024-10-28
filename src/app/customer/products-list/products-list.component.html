@@ -1,0 +1,28 @@
+<section class="section-add">
+  <div class="form-box">
+      <form>
+        <h2>Products</h2>
+        <table class="table-striped">
+          <thead>
+          <tr>
+            <th>Product Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Image</th>
+            <th>Order!</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let product of products">
+            <td>{{product.productName}}</td>
+            <td>{{product.productDescription}}</td>
+            <td>{{product.price}} $</td>
+            <td><img [src]="fetchImage(product.id)" width="10%" height="10%" alt="image not found"></td>
+            <td><a style="color: black" class="fa fa-plus-square"></a></td>
+          </tr>
+          </tbody>
+        </table>
+        <button class="btn btn-primary mt-3" (click)="goToShopsList()">Back</button>
+      </form>
+  </div>
+</section>

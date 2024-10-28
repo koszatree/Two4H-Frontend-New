@@ -14,15 +14,14 @@
         <tr *ngFor="let shop of shops$ | async">
           <td class="fw-bold">{{shop.id}}</td>
           <td>{{shop.shopName}}</td>
-<!--          <td>{{getOwnerOfShop(shop.ownerId)?.firstName}} {{getOwnerOfShop(shop.ownerId)?.lastName}}</td>-->
           <td>
-            <li *ngFor="let product of activeProducts">
-              <ol *ngIf="product.shopId == shop.id">
-                {{product.productName}}
-              </ol>
-            </li>
-
-<!--            {{getProductsFromShop(shop.id)}}-->
+            <ng-container *ngFor="let product of activeProducts">
+              <li style="list-style: none" *ngIf="product.shopId == shop.id">
+                <ol>
+                  {{product.productName}}
+                </ol>
+              </li>
+            </ng-container>
           </td>
           <td><button (click)="shopData(shop.id)" class="bg-transparent border-0"><a style="color: black" class="fa fa-pen"></a></button></td>
         </tr>

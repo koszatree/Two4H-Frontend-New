@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="card">
+    <div class="card-body" *ngIf="shops$ | async as shops; else loading">
+      <table class="table-striped">
+        <thead>
+        <tr>
+          <th>Shop Name</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let shop of shops$ | async">
+          <td>{{shop.shopName}}</td>
+          <td><button (click)="viewProducts(shop.id)" class="bg-transparent border-0"><a style="color: black" class="fa fa-shopping-cart"></a></button></td>
+        </tr>
+        </tbody>
+      </table>
+      <button class="btn btn-primary mt-3" (click)="goToHomePage()">Back to Admin</button>
+    </div>
+
+    <ng-template #loading>
+      <p>Loading shops...</p>
+    </ng-template>
+
+  </div>
+</div>
+

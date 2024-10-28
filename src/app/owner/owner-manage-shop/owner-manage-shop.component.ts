@@ -130,4 +130,8 @@ export class OwnerManageShopComponent implements OnInit{
   goBack(): void {
     this.location.back();
   }
+
+  editProduct(id: number): void {
+    this.router.navigate(['owner/edit-product', id]);
+  }
 }

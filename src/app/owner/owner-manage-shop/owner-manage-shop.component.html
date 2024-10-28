@@ -35,6 +35,7 @@
               <th>Price</th>
               <th>Stock</th>
               <th>Image</th>
+              <th>Edit</th>
             </tr>
             </thead>
             <tbody>
@@ -45,6 +46,7 @@
               <td>{{product.price}}</td>
               <td>{{product.stock}}</td>
               <td><img [src]="fetchImage(product.id)" width="10%" height="10%" alt="image not found"></td>
+              <td><button (click)="editProduct(product.id)" class="bg-transparent border-0"><a style="color: black" class="fa fa-pen"></a></button></td>
             </tr>
             </tbody>
           </table>

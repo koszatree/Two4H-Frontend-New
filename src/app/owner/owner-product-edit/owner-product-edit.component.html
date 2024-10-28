@@ -4,19 +4,19 @@
   <section>
     <div class="form-box">
       <div class="form-value" *ngIf="product">
-        <form (ngSubmit)="edit()">
+        <form (ngSubmit)="edit(product.shopId)">
           <h2>Edit</h2>
           <div class="inputbox">
             <input id="id" [(ngModel)]="product.id" name="id" value="{{product.id}}" readonly>
             <label for="id">ID:</label>
           </div>
           <div class="inputbox">
-            <input type="text" required [(ngModel)]="product.productName" [ngModelOptions]="{standalone: true}" value="{{product.productName}}" class="form-control" id="product_name">
+            <input type="text" required [(ngModel)]="product.productName" [ngModelOptions]="{standalone: true}" value="{{product.productName}}" class="form-control" id="product_name" readonly>
             <label for="product_name">Product Name:</label>
           </div>
           <div class="inputbox">
-            <input type="text" required [(ngModel)]="product.productDescription" [ngModelOptions]="{standalone: true}" value="{{product.productDescription}}" class="form-control" id="product_description">
-            <label for="product_description">Product Description:</label>
+            <input type="text" required [(ngModel)]="product.productDescription" [ngModelOptions]="{standalone: true}" value="{{product.productDescription}}" class="form-control" id="product_desc" readonly>
+            <label for="product_desc">Product Description:</label>
           </div>
           <div class="inputbox">
             <input type="text" required [(ngModel)]="product.price" [ngModelOptions]="{standalone: true}" value="{{product.price}}" class="form-control" id="price">
@@ -26,17 +26,14 @@
             <input type="text" required [(ngModel)]="product.stock" [ngModelOptions]="{standalone: true}" value="{{product.stock}}" class="form-control" id="stock">
             <label for="stock">Stock:</label>
           </div>
-          <div class="checkbox">
-            <label for="isActive">Is Active</label>
-            <input type="checkbox" id="isActive" [(ngModel)]="product.isActive" name="isActive" [checked]="product.isActive">
-          </div>
           <div class="imagebox">
             <img [src]="fetchImage(product.id)" width="10%" height="10%" alt="image not found">
           </div>
           <button type="submit" class="btn btn-primary">Save</button>
         </form>
-        <button class="btn btn-primary" (click)="goBack()">Back</button>
+        <button class="btn btn-primary" (click)="goBack(product.shopId)">Back</button>
       </div>
     </div>
   </section>
 </div>
+

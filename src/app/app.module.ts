@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { AboutComponent } from './about/about.component';
 import { OrderComponent } from './order/order.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './customer/home/home.component';
 import { MapComponent } from './map/map.component';
 import { AdminComponent } from './admin/admin.component';
 import { SellerComponent } from './seller/seller.component';
@@ -26,6 +26,9 @@ import { ShopCreateComponent } from './admin/shop/shop-create/shop-create.compon
 import { OwnerHomeComponent } from './owner/owner-home/owner-home.component';
 import { OwnerManageShopComponent } from './owner/owner-manage-shop/owner-manage-shop.component';
 import { ShopListComponent } from './owner/shop-list/shop-list.component';
+import { OwnerProductEditComponent } from './owner/owner-product-edit/owner-product-edit.component';
+import { ShopsListComponent } from './customer/shops-list/shops-list.component';
+import { ProductsListComponent } from './customer/products-list/products-list.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +52,9 @@ import { ShopListComponent } from './owner/shop-list/shop-list.component';
     OwnerHomeComponent,
     OwnerManageShopComponent,
     ShopListComponent,
+    OwnerProductEditComponent,
+    ShopsListComponent,
+    ProductsListComponent,
   ],
     imports: [
         BrowserModule,
