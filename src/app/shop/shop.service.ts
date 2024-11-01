@@ -27,8 +27,8 @@ export class ShopService {
     return this.http.get<Shop[]>(`http://localhost:8080/api/shopsByOwner?id=${id}`);
   }
 
-  getProductsFromShop(id: number): Observable<Product[]> {
-    return this.http.get<Product[]>(`http://localhost:8080/api/productsFromShop?id=${id}`);
+  getProductsFromShop(id: number): Observable<Productdto[]> {
+    return this.http.get<Productdto[]>(`http://localhost:8080/api/productsFromShop?id=${id}`);
   }
 
   editShop(id: number, shop: Shopdto): Observable<any> {

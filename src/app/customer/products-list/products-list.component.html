@@ -1,7 +1,6 @@
 <section class="section-add">
   <div class="form-box">
       <form>
-        <h2>Products</h2>
         <table class="table-striped">
           <thead>
           <tr>
@@ -9,7 +8,7 @@
             <th>Description</th>
             <th>Price</th>
             <th>Image</th>
-            <th>Order!</th>
+            <th>Add to Cart</th>
           </tr>
           </thead>
           <tbody>
@@ -18,11 +17,12 @@
             <td>{{product.productDescription}}</td>
             <td>{{product.price}} $</td>
             <td><img [src]="fetchImage(product.id)" width="10%" height="10%" alt="image not found"></td>
-            <td><a style="color: black" class="fa fa-plus-square"></a></td>
+            <td><a style="color: black" (click)="addToCart(product)" class="fa fa-plus-square"></a></td>
           </tr>
           </tbody>
         </table>
         <button class="btn btn-primary mt-3" (click)="goToShopsList()">Back</button>
+        <button class="btn btn-primary mt-3" (click)="goToShopsList()">Go to Cart</button>
       </form>
   </div>
 </section>

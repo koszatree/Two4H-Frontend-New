@@ -21,7 +21,7 @@ import {Userdto} from "../../user/userdto";
 export class OwnerManageShopComponent implements OnInit{
   shop!: any;
   owner!: Userdto;
-  productsInShop!: Product[];
+  productsInShop!: Productdto[];
   activeProducts!: Productdto[];
   product!: Productdto;
 

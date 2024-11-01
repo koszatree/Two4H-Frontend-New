@@ -29,6 +29,7 @@ import { ShopListComponent } from './owner/shop-list/shop-list.component';
 import { OwnerProductEditComponent } from './owner/owner-product-edit/owner-product-edit.component';
 import { ShopsListComponent } from './customer/shops-list/shops-list.component';
 import { ProductsListComponent } from './customer/products-list/products-list.component';
+import { CartComponent } from './customer/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { ProductsListComponent } from './customer/products-list/products-list.co
     OwnerProductEditComponent,
     ShopsListComponent,
     ProductsListComponent,
+    CartComponent,
   ],
     imports: [
         BrowserModule,
